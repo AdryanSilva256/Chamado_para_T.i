@@ -3,11 +3,11 @@ function login() {
     const senha = document.getElementById("senha").value;
     const erro = document.getElementById("erro");
 
-    if (usuario === "admin" && senha === "123") {
+    if (usuario === "adryan" && senha === "123") {
         localStorage.setItem("perfil", "admin");
         window.location.href = "admin.html";
 
-    } else if (usuario === "gerente" && senha === "123") {
+    } else if (usuario === "supervisor" && senha === "123") {
         localStorage.setItem("perfil", "gerente");
         window.location.href = "admin.html";
 
