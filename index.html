@@ -11,20 +11,25 @@
 <div class="container">
     <h1>🖥️ Central de Chamados - T.I</h1>
 
+    <!-- ÁREA CLIENTE (SEMPRE VISÍVEL) -->
     <button onclick="window.location.href='cliente.html'">
         👤 Área Cliente
     </button>
 
     <hr>
 
-    <h3>Área do T.I</h3>
+    <!-- BOTÃO PARA MOSTRAR / OCULTAR TI -->
+    <button class="ti-toggle" onclick="toggleTI()">
+        🛠️ Área do T.I
+    </button>
 
-    <input type="text" id="usuario" placeholder="Usuário">
-    <input type="password" id="senha" placeholder="Senha">
-
-    <button onclick="login()">Entrar</button>
-
-    <p id="erro"></p>
+    <!-- ÁREA DO TI (OCULTA) -->
+    <div id="areaTI" class="area-ti">
+        <input type="text" id="usuario" placeholder="Usuário">
+        <input type="password" id="senha" placeholder="Senha">
+        <button onclick="login()">Entrar</button>
+        <p id="erro"></p>
+    </div>
 </div>
 
 <script src="login.js"></script>

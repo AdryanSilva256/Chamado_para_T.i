@@ -6,6 +6,21 @@ let perfil = localStorage.getItem("perfil"); // admin | gerente
 let modo = "abertos";
 let indexParaApagar = null;
 
+/* 🔹 FORMATA DATA/HORA */
+function formatarData(dataISO) {
+    if (!dataISO) return "-";
+
+    const data = new Date(dataISO);
+    return (
+        data.toLocaleDateString("pt-BR") +
+        " " +
+        data.toLocaleTimeString("pt-BR", {
+            hour: "2-digit",
+            minute: "2-digit"
+        })
+    );
+}
+
 function render() {
     lista.innerHTML = "";
 
@@ -34,15 +49,31 @@ function render() {
                     </button>`;
             }
 
-            const li = document.createElement("li");
-            li.innerHTML = `
-                <strong>${c.nome}</strong> - ${c.setor}<br>
-                <em>${c.tipo}</em><br>
-                ${c.descricao}<br>
-                <b>Status:</b> ${c.status}<br>
-                ${botoes}
-            `;
+            const numeroChamado = c.id
+                ? `#${String(c.id).padStart(3, "0")}`
+                : "#---";
 
+            const li = document.createElement("li");
+li.innerHTML = `
+    <div class="chamado-card">
+        <div class="chamado-id">${numeroChamado}</div>
+
+        <div class="chamado-info">
+            <strong>${c.nome}</strong> - ${c.setor}<br>
+            <em>${c.tipo}</em><br>
+            ${c.descricao}<br><br>
+
+            🕒 <b>Aberto em:</b> ${formatarData(c.criadoEm)}<br>
+            ${
+                c.resolvidoEm
+                    ? `✅ <b>Resolvido em:</b> ${formatarData(c.resolvidoEm)}<br>`
+                    : ""
+            }
+            <b>Status:</b> ${c.status}<br>
+            ${botoes}
+        </div>
+    </div>
+`;
             lista.appendChild(li);
         }
     });
@@ -50,6 +81,7 @@ function render() {
 
 function concluir(index) {
     chamados[index].status = "Resolvido";
+    chamados[index].resolvidoEm = new Date().toISOString();
     salvar();
 }
 
@@ -85,4 +117,3 @@ function mostrarAtendidos() {
 }
 
 render();
-
