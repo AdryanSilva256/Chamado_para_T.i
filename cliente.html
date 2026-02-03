@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cliente - Abrir Chamado</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div class="container">
+    <h1>📞 Abrir Chamado</h1>
+
+    <form id="formChamado">
+        <input id="nome" placeholder="Nome do solicitante" required>
+        <input id="setor" placeholder="Setor" required>
+
+        <select id="tipo">
+            <option>Computador</option>
+            <option>Internet</option>
+            <option>Impressora</option>
+            <option>Sistema</option>
+            <option>Outro</option>
+        </select>
+
+        <textarea id="descricao" placeholder="Descreva o problema" required></textarea>
+
+        <button type="submit">Enviar Chamado</button>
+    </form>
+
+    <button class="voltar" onclick="window.location.href='login.html'">
+        ⬅ Voltar
+    </button>
+</div>
+
+<!-- MODAL DE SUCESSO -->
+<div id="modalSucesso" class="modal">
+    <div class="modal-content">
+        <h2>✅ Sucesso!</h2>
+        <p>Chamado aberto com sucesso.</p>
+        <button type="button" onclick="fecharModal()">OK</button>
+    </div>
+</div>
+
+<!-- SCRIPT SEMPRE POR ÚLTIMO -->
+<script src="cliente.js"></script>
+
+</body>
+</html>

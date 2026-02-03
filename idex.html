@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Chamados T.I</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div class="container">
+    <h1>📞 Central de Chamados - T.I</h1>
+
+    <form id="chamadoForm">
+        <label>Nome do solicitante</label>
+        <input type="text" id="nome" required>
+
+        <label>Setor</label>
+        <input type="text" id="setor" required>
+
+        <label>Tipo de problema</label>
+        <select id="tipo">
+            <option>Computador</option>
+            <option>Internet</option>
+            <option>Sistema</option>
+            <option>Impressora</option>
+            <option>Outro</option>
+        </select>
+
+        <label>Descrição do problema</label>
+        <textarea id="descricao" required></textarea>
+
+        <button type="submit">Abrir Chamado</button>
+    </form>
+
+    <h2>📋 Chamados Abertos</h2>
+    <ul id="listaChamados"></ul>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

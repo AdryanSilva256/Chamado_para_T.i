@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin - Painel T.I</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div class="container">
+    <h1>🛠️ Painel do T.I</h1>
+
+    <div class="abas">
+        <button onclick="mostrarAbertos()">📂 Chamados Abertos</button>
+        <button onclick="mostrarAtendidos()">✅ Chamados Atendidos</button>
+    </div>
+
+    <ul id="listaChamados"></ul>
+
+    <button class="voltar" onclick="window.location.href='login.html'">
+        ⬅ Sair
+    </button>
+</div>
+
+<!-- MODAL CONFIRMAÇÃO -->
+<div id="modalConfirmar" class="modal">
+    <div class="modal-content">
+        <h2>⚠️ Atenção</h2>
+        <p>Tem certeza que deseja apagar este chamado?</p>
+
+        <div class="acoes">
+            <button class="cancelar" onclick="fecharConfirmacao()">Cancelar</button>
+            <button class="danger" onclick="confirmarApagar()">Apagar</button>
+        </div>
+    </div>
+</div>
+
+
+<script src="admin.js"></script>
+</body>
+</html>

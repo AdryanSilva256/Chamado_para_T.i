@@ -1,0 +1,179 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+}
+
+.container {
+    width: 450px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+input, select, textarea, button {
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+}
+
+textarea {
+    resize: none;
+    height: 80px;
+}
+
+button {
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+.voltar {
+    background: #6c757d;
+}
+
+li {
+    background: #eee;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+hr {
+    margin: 20px 0;
+}
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background: white;
+    width: 300px;
+    margin: 150px auto;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.modal-content h2 {
+    color: #28a745;
+}
+
+.modal-content button {
+    margin-top: 15px;
+    background: #28a745;
+}
+
+.abas {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.abas button {
+    flex: 1;
+    background: #0d6efd;
+}
+
+.abas button:hover {
+    background: #084298;
+}
+
+.danger {
+    background: #dc3545;
+}
+
+.danger:hover {
+    background: #b02a37;
+}
+
+/* MODAL CONFIRMAÇÃO */
+.modal {
+    display: none; /* ✅ COMEÇA ESCONDIDO */
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.modal-content {
+    background: white;
+    width: 320px;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.modal-content h2 {
+    margin-bottom: 10px;
+}
+
+.acoes {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.cancelar {
+    background: #6c757d;
+}
+
+.cancelar:hover {
+    background: #565e64;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+
+    .container {
+        width: 95%;
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+    }
+
+    input, select, textarea, button {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    .abas {
+        flex-direction: column;
+    }
+
+    .abas button {
+        width: 100%;
+    }
+
+    .acoes {
+        flex-direction: column;
+    }
+
+    .acoes button {
+        width: 100%;
+    }
+
+    li {
+        font-size: 0.95rem;
+    }
+}
